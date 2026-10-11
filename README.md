@@ -2,7 +2,7 @@
 
 Implement exactly the screenshot and nothing else
 
-This project was built with [Lovable](https://lovable.dev).    m
+This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
