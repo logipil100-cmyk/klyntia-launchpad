@@ -12,7 +12,7 @@ const content: LegalContent = {
       ["Utilização aceitável", "Não pode usar o serviço para enviar spam, conteúdo ilegal ou enganoso, nem para violar os termos do WhatsApp, Instagram ou de outros canais ligados."],
       ["Respostas de IA", "As respostas geradas por IA podem conter erros. É responsável por rever as configurações e o conhecimento fornecido à IA e por supervisionar o seu uso junto dos seus clientes."],
       ["Os seus dados", "Os dados e conversas dos seus clientes pertencem-lhe. Tratamo-los apenas para prestar o serviço, conforme a nossa Política de Privacidade."],
-      ["Contacto", "Para questões sobre estes termos, escreva para support@klyntia.com."],
+      ["Contacto", "Para questões sobre estes termos, escreva para support@gnistrabot.com."],
     ],
   },
   en: {
@@ -25,7 +25,7 @@ const content: LegalContent = {
       ["Acceptable use", "You may not use the service to send spam or illegal or misleading content, or to breach the terms of WhatsApp, Instagram or other connected channels."],
       ["AI replies", "AI-generated replies may contain mistakes. You are responsible for reviewing the settings and knowledge given to the AI and supervising its use with your customers."],
       ["Your data", "Your data and your customers' conversations belong to you. We process them only to provide the service, as described in our Privacy Policy."],
-      ["Contact", "For questions about these terms, email support@klyntia.com."],
+      ["Contact", "For questions about these terms, email support@gnistrabot.com."],
     ],
   },
 };
