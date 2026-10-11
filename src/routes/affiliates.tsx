@@ -9,10 +9,10 @@ import { GoogleIcon } from "@/components/google-icon";
 export const Route = createFileRoute("/affiliates")({
   head: () => ({
     meta: [
-      { title: "Programa de afiliados — Klyntia AI" },
-      { name: "description", content: "Torne-se afiliado da Klyntia AI: ganhe na primeira assinatura e a cada 3 meses com o cliente ativo." },
-      { property: "og:title", content: "Programa de afiliados — Klyntia AI" },
-      { property: "og:description", content: "Indique a Klyntia AI e ganhe comissões. Cadastro gratuito." },
+      { title: "Programa de afiliados — Gnistrabot" },
+      { name: "description", content: "Torne-se afiliado da Gnistrabot: ganhe na primeira assinatura e a cada 3 meses com o cliente ativo." },
+      { property: "og:title", content: "Programa de afiliados — Gnistrabot" },
+      { property: "og:description", content: "Indique a Gnistrabot e ganhe comissões. Cadastro gratuito." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -61,15 +61,15 @@ function AffiliatesPage() {
   }
 
   const perks = pt
-    ? [["Comissão garantida", "Ganhe na primeira assinatura do cliente indicado e volte a ganhar a cada 3 meses em que ele se mantiver ativo."], ["Link exclusivo", "Partilhe o seu link nas redes, blog ou com clientes."], ["Painel próprio", "Acompanhe a sua conta no painel da Klyntia AI."]]
-    : [["Guaranteed commission", "Earn on your referred customer's first subscription, and earn again every 3 months they stay active."], ["Unique link", "Share it on social, your blog or with clients."], ["Own dashboard", "Track your account in the Klyntia AI dashboard."]];
+    ? [["Comissão garantida", "Ganhe na primeira assinatura do cliente indicado e volte a ganhar a cada 3 meses em que ele se mantiver ativo."], ["Link exclusivo", "Partilhe o seu link nas redes, blog ou com clientes."], ["Painel próprio", "Acompanhe a sua conta no painel da Gnistrabot."]]
+    : [["Guaranteed commission", "Earn on your referred customer's first subscription, and earn again every 3 months they stay active."], ["Unique link", "Share it on social, your blog or with clients."], ["Own dashboard", "Track your account in the Gnistrabot dashboard."]];
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10">
       <section>
         <p className="eyebrow mb-2">{pt ? "Programa de afiliados" : "Affiliate program"}</p>
         <h1 className="font-display font-bold text-[2rem] md:text-5xl leading-tight">
-          {pt ? "Indique a Klyntia AI e ganhe comissões." : "Refer Klyntia AI and earn commissions."}
+          {pt ? "Indique a Gnistrabot e ganhe comissões." : "Refer Gnistrabot and earn commissions."}
         </h1>
         <ul className="mt-8 space-y-4">
           {perks.map(([t, d]) => (

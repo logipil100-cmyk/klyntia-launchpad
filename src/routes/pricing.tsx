@@ -4,9 +4,9 @@ import { Pricing } from "@/components/site";
 export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
-      { title: "Preços — Klyntia AI" },
+      { title: "Preços — Gnistrabot" },
       { name: "description", content: "Planos Starter, Pro e Scale. Teste grátis por 14 dias, sem cartão." },
-      { property: "og:title", content: "Preços — Klyntia AI" },
+      { property: "og:title", content: "Preços — Gnistrabot" },
       { property: "og:description", content: "Planos simples para atendimento e vendas com IA." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

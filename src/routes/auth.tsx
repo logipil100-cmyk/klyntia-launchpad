@@ -20,10 +20,10 @@ export const Route = createFileRoute("/auth")({
   },
   head: () => ({
     meta: [
-      { title: "Entrar — Klyntia AI" },
-      { name: "description", content: "Entre ou crie a sua conta Klyntia AI com email ou Google." },
-      { property: "og:title", content: "Entrar — Klyntia AI" },
-      { property: "og:description", content: "Entre ou crie a sua conta Klyntia AI." },
+      { title: "Entrar — Gnistrabot" },
+      { name: "description", content: "Entre ou crie a sua conta Gnistrabot com email ou Google." },
+      { property: "og:title", content: "Entrar — Gnistrabot" },
+      { property: "og:description", content: "Entre ou crie a sua conta Gnistrabot." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],

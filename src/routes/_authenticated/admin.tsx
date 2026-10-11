@@ -6,9 +6,9 @@ import { useT } from "@/lib/i18n";
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
     meta: [
-      { title: "Super Admin — Klyntia AI" },
-      { name: "description", content: "Centro de controlo da plataforma Klyntia AI." },
-      { property: "og:title", content: "Super Admin — Klyntia AI" },
+      { title: "Super Admin — Gnistrabot" },
+      { name: "description", content: "Centro de controlo da plataforma Gnistrabot." },
+      { property: "og:title", content: "Super Admin — Gnistrabot" },
       { property: "og:description", content: "Planos, afiliados, levantamentos e auditoria." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

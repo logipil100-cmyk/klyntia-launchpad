@@ -30,8 +30,8 @@ export function SectorCards() {
 export function Logo() {
   return (
     <Link to="/" className="flex items-center gap-2">
-      <span className="size-6 bg-ember rounded-[6px] grid place-items-center text-paper font-bold text-[11px] leading-none" aria-hidden="true">K</span>
-      <span className="font-display font-bold text-[15px] ">Klyntia</span>
+      <span className="size-6 bg-ember rounded-[6px] grid place-items-center text-paper font-bold text-[11px] leading-none" aria-hidden="true">G</span>
+      <span className="font-display font-bold text-[15px] ">Gnistrabot</span>
     </Link>
   );
 }
@@ -84,7 +84,7 @@ export function SiteFooter() {
         <div className="mt-5 card-line rounded-[14px] p-4 flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div>
             <p className="font-semibold text-[14px]">{lang === "pt" ? "Programa de afiliados" : "Affiliate program"}</p>
-            <p className="text-[12px] text-sage">{lang === "pt" ? "Indique a Klyntia AI e ganhe comissões." : "Refer Klyntia AI and earn commissions."}</p>
+            <p className="text-[12px] text-sage">{lang === "pt" ? "Indique a Gnistrabot e ganhe comissões." : "Refer Gnistrabot and earn commissions."}</p>
           </div>
           <Link to="/affiliates" className="btn-ember text-[12px] text-center">{lang === "pt" ? "Criar conta de afiliado" : "Create affiliate account"}</Link>
         </div>
@@ -98,7 +98,7 @@ export function SiteFooter() {
           <Link to="/privacy">{t.legal.privacy}</Link>
           <Link to="/terms">{t.legal.terms}</Link>
         </div>
-        <p className="mt-6 text-[11px] font-mono text-sage">{lang === "pt" ? "© 2026 Klyntia. Todos os direitos reservados." : "© 2026 Klyntia. All rights reserved."}</p>
+        <p className="mt-6 text-[11px] font-mono text-sage">{lang === "pt" ? "© 2026 Gnistrabot. Todos os direitos reservados." : "© 2026 Gnistrabot. All rights reserved."}</p>
         <a href="mailto:support@klyntia.com" className="mt-2 inline-block text-[12px] text-sage">support@klyntia.com</a>
       </div>
     </footer>
@@ -149,7 +149,7 @@ export function DemoInbox() {
   return (
     <div className="bg-paper text-ink rounded-2xl shadow-[0_0_0_1px_var(--border),0_20px_50px_-20px_var(--ink)] p-3 md:p-5">
       <div className="flex items-center justify-between border-b pb-2 mb-3">
-        <span className="text-[11px] font-semibold">Klyntia AI · {t.demo.ch}</span>
+        <span className="text-[11px] font-semibold">Gnistrabot · {t.demo.ch}</span>
         <span className="text-[10px] font-mono text-sage">online</span>
       </div>
       <div className="space-y-2 text-[12px] md:text-sm">

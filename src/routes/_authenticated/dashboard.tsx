@@ -10,10 +10,10 @@ import { AffiliateFinance } from "@/components/affiliate-finance";
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
     meta: [
-      { title: "Painel — Klyntia AI" },
-      { name: "description", content: "Gerir o seu perfil e aceder às ferramentas da Klyntia AI." },
-      { property: "og:title", content: "Painel — Klyntia AI" },
-      { property: "og:description", content: "O seu painel Klyntia AI." },
+      { title: "Painel — Gnistrabot" },
+      { name: "description", content: "Gerir o seu perfil e aceder às ferramentas da Gnistrabot." },
+      { property: "og:title", content: "Painel — Gnistrabot" },
+      { property: "og:description", content: "O seu painel Gnistrabot." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
