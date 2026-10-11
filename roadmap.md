@@ -1,5 +1,5 @@
 # Roadmap
-- [ ] Rebranding completo para Klyntia: textos, identidade interna, metadados e verificação visual
+- [ ] Rebranding completo para Gnistrabot: textos, identidade interna, metadados e verificação visual
 - [ ] Pagamentos (Paddle) — adiado pelo utilizador
 - [ ] Tracking de afiliados: links exclusivos, comissões, painel de ganhos
 - [ ] Ferramentas do painel: Caixa de entrada, Agente de IA, CRM, Integrações, Relatórios, Equipa (hoje "Em breve")
