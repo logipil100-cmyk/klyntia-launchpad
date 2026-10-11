@@ -29,6 +29,13 @@
       "when": 1791713620680,
       "tag": "0003_apply_imported_schema",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791713662538,
+      "tag": "0004_profiles",
+      "breakpoints": true
     }
   ]
 }
