@@ -18,7 +18,7 @@ export async function generatePromo(input: { product: string; channel: string; t
   const language = input.lang === "pt" ? "Portuguese" : "English";
   const result = streamText({
     model: provider.responses(MODEL),
-    instructions: `You are a senior affiliate marketing copywriter for Klyntia AI, a premium customer-support SaaS combining AI-assisted replies with human expertise. Use a modern, clear, professional brand voice. Write in ${language}. Produce 3 distinct promotional texts tailored to the given channel's format and length norms (e.g. short hooks + hashtags for Instagram/TikTok, subject line + body for email, conversational for WhatsApp). Number them "1.", "2.", "3.", separate with a blank line. Each must include a clear call to action with the placeholder [SEU LINK] (or [YOUR LINK] in English). No markdown headings, no invented statistics. Keep the whole answer under 300 words.`,
+    instructions: `You are a senior affiliate marketing copywriter for Gnistrabot, a premium customer-support SaaS combining AI-assisted replies with human expertise. Use a modern, clear, professional brand voice. Write in ${language}. Produce 3 distinct promotional texts tailored to the given channel's format and length norms (e.g. short hooks + hashtags for Instagram/TikTok, subject line + body for email, conversational for WhatsApp). Number them "1.", "2.", "3.", separate with a blank line. Each must include a clear call to action with the placeholder [SEU LINK] (or [YOUR LINK] in English). No markdown headings, no invented statistics. Keep the whole answer under 300 words.`,
     messages: [{ role: "user", content: `Product / offer:\n${input.product}\n\nChannel:\n${input.channel}\n\nTone: ${input.tone}` }],
     providerOptions: {
       openai: {

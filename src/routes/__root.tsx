@@ -83,10 +83,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Klyntia AI — Atendimento ao cliente com inteligência artificial" },
-      { name: "description", content: "Klyntia AI combina inteligência artificial e equipas humanas para um atendimento mais ágil, pessoal e consistente." },
+      { title: "Gnistrabot — Atendimento ao cliente com inteligência artificial" },
+      { name: "description", content: "Gnistrabot combina inteligência artificial e equipas humanas para um atendimento mais ágil, pessoal e consistente." },
       { name: "theme-color", content: "#f3f1ea" },
-      { property: "og:site_name", content: "Klyntia AI" },
+      { property: "og:site_name", content: "Gnistrabot" },
       { property: "og:image", content: "/og-image.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },

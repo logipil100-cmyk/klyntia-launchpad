@@ -5,10 +5,10 @@ import { DemoInbox, Integrations } from "@/components/site";
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Recursos — Klyntia AI" },
+      { title: "Recursos — Gnistrabot" },
       { name: "description", content: "Agente de IA, CRM automático, automação de vendas, base de conhecimento e relatórios." },
-      { property: "og:title", content: "Recursos — Klyntia AI" },
-      { property: "og:description", content: "Tudo o que a Klyntia AI faz pela sua equipa." },
+      { property: "og:title", content: "Recursos — Gnistrabot" },
+      { property: "og:description", content: "Tudo o que a Gnistrabot faz pela sua equipa." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

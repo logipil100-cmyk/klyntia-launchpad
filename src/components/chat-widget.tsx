@@ -77,7 +77,7 @@ export function ChatWidget() {
         >
           <header className="flex items-center justify-between px-4 py-3 bg-ink text-paper">
             <div className="flex items-center gap-2">
-              <span className="size-7 bg-ember rounded-lg grid place-items-center font-bold text-[12px]" aria-hidden="true">K</span>
+              <span className="size-7 bg-ember rounded-lg grid place-items-center font-bold text-[12px]" aria-hidden="true">G</span>
               <div>
                 <p className="text-[13px] font-semibold leading-tight">{t.chat.title}</p>
                 <p className="text-[10px] font-mono text-paper/70 flex items-center gap-1.5">

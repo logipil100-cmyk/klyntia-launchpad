@@ -11,7 +11,7 @@ export const Route = createFileRoute("/solucoes/$sector")({
   },
   head: ({ params }) => {
     const s = getSector(params.sector)?.copy.pt;
-    const title = s ? `${s.name} — Klyntia AI` : "Klyntia AI";
+    const title = s ? `${s.name} — Gnistrabot` : "Gnistrabot";
     return {
       meta: [
         { title },

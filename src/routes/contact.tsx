@@ -7,10 +7,10 @@ import { contactSchema, sendContactMessage } from "@/lib/contact.functions";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contacto — Klyntia AI" },
-      { name: "description", content: "Fale com um especialista da Klyntia AI. Resposta em menos de um dia útil." },
-      { property: "og:title", content: "Contacto — Klyntia AI" },
-      { property: "og:description", content: "Fale com a equipa Klyntia AI." },
+      { title: "Contacto — Gnistrabot" },
+      { name: "description", content: "Fale com um especialista da Gnistrabot. Resposta em menos de um dia útil." },
+      { property: "og:title", content: "Contacto — Gnistrabot" },
+      { property: "og:description", content: "Fale com a equipa Gnistrabot." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

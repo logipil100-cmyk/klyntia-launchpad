@@ -6,10 +6,10 @@ import { openDemoChat } from "@/components/chat-widget";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Klyntia AI — Atendimento ao cliente com inteligência artificial" },
-      { name: "description", content: "Klyntia AI combina inteligência artificial e atendimento humano para organizar conversas e apoiar a sua equipa no WhatsApp, Instagram e site." },
-      { property: "og:title", content: "Klyntia AI — Atendimento ao cliente com inteligência artificial" },
-      { property: "og:description", content: "Klyntia AI: inteligência artificial e equipas humanas, juntas num atendimento mais ágil e pessoal." },
+      { title: "Gnistrabot — Atendimento ao cliente com inteligência artificial" },
+      { name: "description", content: "Gnistrabot combina inteligência artificial e atendimento humano para organizar conversas e apoiar a sua equipa no WhatsApp, Instagram e site." },
+      { property: "og:title", content: "Gnistrabot — Atendimento ao cliente com inteligência artificial" },
+      { property: "og:description", content: "Gnistrabot: inteligência artificial e equipas humanas, juntas num atendimento mais ágil e pessoal." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -26,7 +26,7 @@ function Index() {
           <div>
             <p className="eyebrow mb-5">{t.hero.eyebrow}</p>
             <h1 className="font-display font-extrabold leading-tight text-[2.5rem] md:text-[4rem]">
-              <span className="klyntia-slide text-ember">Klyntia AI</span>
+              <span className="klyntia-slide text-ember">Gnistrabot</span>
               <span className="block mt-3 text-[1.75rem] md:text-[2.75rem] leading-tight">{t.hero.a} {t.hero.b}</span>
             </h1>
             <p className="mt-6 text-[15px] md:text-lg text-sage leading-relaxed max-w-[34ch]">{t.hero.sub}</p>

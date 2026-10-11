@@ -17,7 +17,7 @@ export const SECTORS: Sector[] = [
       pt: {
         name: "Clínicas e consultórios",
         title: "Marcações e dúvidas de pacientes, respondidas a qualquer hora.",
-        sub: "A Klyntia AI responde a perguntas sobre horários, preços e preparação para consultas no WhatsApp e no site, e passa à receção os casos clínicos.",
+        sub: "A Gnistrabot responde a perguntas sobre horários, preços e preparação para consultas no WhatsApp e no site, e passa à receção os casos clínicos.",
         pains: [
           ["Receção sobrecarregada", "A IA trata das perguntas repetitivas e liberta a equipa para quem está na clínica."],
           ["Mensagens fora de horas", "Pacientes recebem resposta imediata, mesmo à noite e ao fim de semana."],
@@ -28,7 +28,7 @@ export const SECTORS: Sector[] = [
       en: {
         name: "Clinics and practices",
         title: "Patient bookings and questions, answered around the clock.",
-        sub: "Klyntia AI answers questions about hours, prices and appointment prep on WhatsApp and your website, and hands clinical cases to your front desk.",
+        sub: "Gnistrabot answers questions about hours, prices and appointment prep on WhatsApp and your website, and hands clinical cases to your front desk.",
         pains: [
           ["Overloaded front desk", "The AI handles repetitive questions so your team can focus on patients in the clinic."],
           ["After-hours messages", "Patients get an instant reply, even at night and on weekends."],
