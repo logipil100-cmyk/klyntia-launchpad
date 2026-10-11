@@ -1,7 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
-export const DEMO_MAX_USER_TURNS = 6;
+export const DEMO_MAX_USER_TURNS = 50;
 
 const schema = z.object({
   lang: z.enum(["pt", "en"]),
