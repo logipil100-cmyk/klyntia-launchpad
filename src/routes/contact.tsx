@@ -56,7 +56,7 @@ function Contact() {
           {state === "err" && <p className="text-sm text-destructive">{t.contact.err}</p>}
           {state === "fail" && (
             <p className="text-sm text-destructive">
-              {t.contact.fail} <a href="mailto:support@klyntia.com" className="underline">support@klyntia.com</a>
+              {t.contact.fail} <a href="mailto:support@gnistrabot.com" className="underline">support@gnistrabot.com</a>
             </p>
           )}
         </div>
