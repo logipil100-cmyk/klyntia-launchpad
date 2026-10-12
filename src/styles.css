@@ -152,6 +152,27 @@
   }
 }
 
+@keyframes klyntia-contact-motion {
+  0%,
+  100% {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: scale(1.045) translate3d(0.8%, -0.4%, 0);
+  }
+  50% {
+    transform: scale(1.03) translate3d(-0.6%, 0.7%, 0);
+  }
+  75% {
+    transform: scale(1.05) translate3d(0.4%, 0.2%, 0);
+  }
+}
+
+@utility klyntia-contact-motion {
+  animation: klyntia-contact-motion 8s ease-in-out infinite;
+  transform-origin: 52% 50%;
+}
+
 @keyframes klyntia-slide {
   from {
     transform: translateX(-100%);

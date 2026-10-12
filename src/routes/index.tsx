@@ -68,7 +68,7 @@ function Index() {
               <img
                 src="/ai-human-contact.png"
                 alt="Uma inteligência artificial a tocar num dedo humano"
-                className="aspect-[16/9] w-full object-cover opacity-90 transition-transform duration-700 hover:scale-[1.03]"
+                className="klyntia-contact-motion aspect-[16/9] w-full object-cover opacity-90 transition-transform duration-700 hover:scale-[1.03]"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
               <p className="absolute bottom-4 left-4 max-w-[22ch] text-xs font-medium text-paper/90">
