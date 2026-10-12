@@ -63,7 +63,7 @@ function Index() {
               <span>{t.hero.stat2}</span>
             </div>
           </div>
-          <div className="hidden md:flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
             <div className="relative overflow-hidden rounded-[18px] border border-border/70 bg-ink shadow-[0_24px_70px_-34px_var(--ink)]">
               <img
                 src="/ai-human-contact.png"
