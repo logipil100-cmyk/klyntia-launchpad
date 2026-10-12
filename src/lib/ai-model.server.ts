@@ -3,7 +3,7 @@ import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 
 // Uses the user's own Google key when GEMINI_API_KEY is set (e.g. on Vercel);
 // otherwise routes the same Gemini model through the Lovable AI Gateway.
-export function getGeminiModel(model = "gemini-2.5-flash") {
+export function getGeminiModel(model = "gemini-2.0-flash") {
   const gemini = process.env["GEMINI_API_KEY"];
   if (gemini) return createGoogleGenerativeAI({ apiKey: gemini })(model);
   const lovable = process.env["LOVABLE_API_KEY"];
