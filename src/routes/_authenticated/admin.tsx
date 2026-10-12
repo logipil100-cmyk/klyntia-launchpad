@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { getAdminOverview, updatePlan, decidePayout, type AdminOverview } from "@/lib/admin.functions";
 import { useT } from "@/lib/i18n";
+import { ProvidersAdmin } from "@/components/providers-admin";
 
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
@@ -19,7 +20,7 @@ export const Route = createFileRoute("/_authenticated/admin")({
 });
 
 const usd = (c: number) => `$${(c / 100).toFixed(2)}`;
-type Tab = "plans" | "affiliates" | "payouts" | "audit";
+type Tab = "plans" | "affiliates" | "payouts" | "audit" | "providers";
 
 function AdminPage() {
   const { lang } = useT();
@@ -47,7 +48,7 @@ function AdminPage() {
     setBusy(id); await decidePayout({ data: { id, decision } }); await load(); setBusy(null);
   }
 
-  const tabs: [Tab, string][] = [["payouts", pt ? "Levantamentos" : "Payouts"], ["plans", pt ? "Planos" : "Plans"], ["affiliates", pt ? "Afiliados" : "Affiliates"], ["audit", pt ? "Auditoria" : "Audit"]];
+  const tabs: [Tab, string][] = [["payouts", pt ? "Levantamentos" : "Payouts"], ["plans", pt ? "Planos" : "Plans"], ["affiliates", pt ? "Afiliados" : "Affiliates"], ["audit", pt ? "Auditoria" : "Audit"], ["providers", "Technology Providers"]];
   const requested = data.payouts.filter((p) => p.status === "requested");
   const kpis: [string, string][] = [
     ["MRR", usd(data.mrrCents)],
@@ -98,6 +99,8 @@ function AdminPage() {
               ))}
             </ul>
           ))}
+
+          {tab === "providers" && <ProvidersAdmin />}
 
           {tab === "plans" && <div className="space-y-3">{data.plans.map((p) => <PlanRow key={p.id} plan={p} pt={pt} onSaved={load} />)}</div>}
 
