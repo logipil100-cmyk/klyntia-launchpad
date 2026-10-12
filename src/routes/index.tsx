@@ -46,6 +46,17 @@ function Index() {
             <p className="mt-7 max-w-[37ch] text-[15px] leading-7 text-sage md:text-lg">
               {t.hero.sub}
             </p>
+            <div className="relative mt-8 max-w-[37rem] overflow-hidden rounded-[18px] border border-border/70 bg-ink shadow-[0_24px_70px_-34px_var(--ink)]">
+              <img
+                src="/ai-human-contact.png"
+                alt="Uma inteligência artificial a tocar num dedo humano"
+                className="klyntia-contact-motion aspect-[16/9] w-full object-cover opacity-90"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent" />
+              <p className="absolute bottom-4 left-4 max-w-[22ch] text-xs font-medium text-paper/90">
+                {t.hero.stat2}
+              </p>
+            </div>
             <div className="mt-7 flex flex-col sm:flex-row gap-2.5">
               <Link to="/auth" search={{ mode: "up" }} className="btn-ember">
                 {t.hero.cta}
@@ -64,17 +75,6 @@ function Index() {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="relative overflow-hidden rounded-[18px] border border-border/70 bg-ink shadow-[0_24px_70px_-34px_var(--ink)]">
-              <img
-                src="/ai-human-contact.png"
-                alt="Uma inteligência artificial a tocar num dedo humano"
-                className="klyntia-contact-motion aspect-[16/9] w-full object-cover opacity-90 transition-transform duration-700 hover:scale-[1.03]"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
-              <p className="absolute bottom-4 left-4 max-w-[22ch] text-xs font-medium text-paper/90">
-                {t.hero.stat2}
-              </p>
-            </div>
             <DemoInbox />
           </div>
         </div>
