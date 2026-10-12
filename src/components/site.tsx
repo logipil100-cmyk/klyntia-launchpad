@@ -5,6 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useSessionUser } from "@/hooks/use-session";
 import { SECTORS } from "@/lib/sectors";
 import { openDemoChat } from "@/components/chat-widget";
+import { PoweredByFooter } from "@/components/powered-by";
 
 export function SectorCards() {
   const { t, lang } = useT();
@@ -98,6 +99,7 @@ export function SiteFooter() {
           <Link to="/privacy">{t.legal.privacy}</Link>
           <Link to="/terms">{t.legal.terms}</Link>
         </div>
+        <PoweredByFooter />
         <p className="mt-6 text-[11px] font-mono text-sage">{lang === "pt" ? "© 2026 Gnistrabot. Todos os direitos reservados." : "© 2026 Gnistrabot. All rights reserved."}</p>
         <a href="mailto:support@gnistrabot.com" className="mt-2 inline-block text-[12px] text-sage">support@gnistrabot.com</a>
       </div>

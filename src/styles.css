@@ -83,3 +83,8 @@
 @utility btn-ember { background: var(--ember); color: var(--paper); font-weight: 600; font-size: .875rem; padding: .7rem 1.25rem; border-radius: .5rem; text-align: center; transition: transform .15s, filter .15s; &:hover { filter: brightness(1.05); transform: translateY(-1px); } }
 @utility btn-ink { background: var(--ink); color: var(--paper); font-weight: 600; font-size: .875rem; padding: .7rem 1.25rem; border-radius: .5rem; text-align: center; transition: transform .15s; &:hover { transform: translateY(-1px); } }
 @utility btn-line { box-shadow: 0 0 0 1px var(--input); font-weight: 600; font-size: .875rem; padding: .7rem 1.25rem; border-radius: .5rem; text-align: center; transition: background .15s; &:hover { background: var(--muted); } }
+
+@keyframes gnistrabot-marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+.powered-track { animation: gnistrabot-marquee 40s linear infinite; }
+.powered-viewport:hover .powered-track, .powered-viewport:focus-within .powered-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .powered-track { animation: none; flex-wrap: wrap; width: auto; } }
