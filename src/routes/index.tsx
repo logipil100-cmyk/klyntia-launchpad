@@ -63,7 +63,18 @@ function Index() {
               <span>{t.hero.stat2}</span>
             </div>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:flex flex-col gap-4">
+            <div className="relative overflow-hidden rounded-[18px] border border-border/70 bg-ink shadow-[0_24px_70px_-34px_var(--ink)]">
+              <img
+                src="/ai-human-contact.png"
+                alt="Uma inteligência artificial a tocar num dedo humano"
+                className="aspect-[16/9] w-full object-cover opacity-90 transition-transform duration-700 hover:scale-[1.03]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
+              <p className="absolute bottom-4 left-4 max-w-[22ch] text-xs font-medium text-paper/90">
+                {t.hero.stat2}
+              </p>
+            </div>
             <DemoInbox />
           </div>
         </div>
