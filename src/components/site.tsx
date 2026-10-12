@@ -57,8 +57,8 @@ export function SiteHeader() {
   const navigate = useNavigate();
   const link = "text-sm text-sage hover:text-ink transition-colors";
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-paper/90 backdrop-blur-xl">
-      <div className="section-shell h-16 flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 border-b border-border/70 bg-paper/85 backdrop-blur-2xl">
+      <div className="section-shell h-[4.5rem] flex items-center justify-between gap-4">
         <Logo />
         <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8">
           <Link to="/features" className={link} activeProps={{ className: "text-ink" }}>

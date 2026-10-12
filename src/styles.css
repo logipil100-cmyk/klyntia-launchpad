@@ -90,9 +90,29 @@
 
 @utility section-shell {
   width: 100%;
-  max-width: 72rem;
+  max-width: 78rem;
   margin-inline: auto;
-  padding-inline: 1rem;
+  padding-inline: 1.25rem;
+}
+@utility section-frame {
+  position: relative;
+  isolation: isolate;
+}
+@utility hero-title {
+  font-size: clamp(3.25rem, 8vw, 7.25rem);
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+}
+@utility hero-subtitle {
+  font-size: clamp(1.7rem, 3.4vw, 3.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+@utility hairline-grid {
+  background-image: linear-gradient(to right, var(--border) 1px, transparent 1px), linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  opacity: 0.45;
 }
 @utility section-space {
   padding-block: 4.5rem;

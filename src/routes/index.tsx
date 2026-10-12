@@ -32,13 +32,14 @@ function Index() {
   const { t } = useT();
   return (
     <>
-      <section className="overflow-hidden border-b border-border/60">
-        <div className="section-shell pt-14 pb-16 md:grid md:grid-cols-[.95fr_1.05fr] md:gap-16 md:items-center md:pt-24 md:pb-24">
+      <section className="section-frame overflow-hidden border-b border-border/60">
+        <div className="pointer-events-none absolute inset-0 hairline-grid" aria-hidden="true" />
+        <div className="section-shell relative pt-16 pb-20 md:grid md:grid-cols-[.9fr_1.1fr] md:gap-16 md:items-center md:pt-28 md:pb-28">
           <div>
             <p className="eyebrow mb-5">{t.hero.eyebrow}</p>
-            <h1 className="max-w-[12ch] font-display font-extrabold leading-[.98] tracking-[-.045em] text-[2.9rem] md:text-[4.5rem]">
+            <h1 className="hero-title max-w-[10ch] font-display font-extrabold">
               <span className="klyntia-slide text-ember">Gnistrabot</span>
-              <span className="block mt-3 text-[1.75rem] md:text-[2.75rem] leading-tight">
+              <span className="hero-subtitle block mt-4">
                 {t.hero.a} {t.hero.b}
               </span>
             </h1>
@@ -82,7 +83,7 @@ function Index() {
           </h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-3">
             {t.how.items.map(([h, p], i) => (
-              <li key={h} className="card-line surface-lift min-h-48 p-6">
+              <li key={h} className="card-line surface-lift min-h-52 p-6 md:p-7">
                 <span className="font-display font-extrabold text-3xl text-ember">{i + 1}</span>
                 <p className="font-semibold mt-2">{h}</p>
                 <p className="text-[13px] text-sage mt-1">{p}</p>
@@ -165,7 +166,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-ember text-paper py-12 md:py-20">
+      <section className="section-frame overflow-hidden bg-ember text-paper py-16 md:py-28">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="font-display font-extrabold text-[2.2rem] md:text-6xl leading-[0.95]">
             {t.cta.a}
