@@ -1,6 +1,6 @@
 # Pixel Perfect
 
-Implement exactly the screenshot and nothing else
+Implement exactly the screenshot and nothing else 
 
 This project was built with [Lovable](https://lovable.dev).
 
