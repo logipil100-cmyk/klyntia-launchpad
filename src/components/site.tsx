@@ -190,12 +190,14 @@ export function Pricing() {
         <div className="mt-4 flex items-center gap-2 text-[11px] font-mono">
           <button
             onClick={() => setYearly(false)}
+            aria-pressed={!yearly}
             className={`px-3 py-1.5 rounded-full ${!yearly ? "bg-ink text-paper" : "shadow-[0_0_0_1px_var(--input)] text-sage"}`}
           >
             {t.price.monthly}
           </button>
           <button
             onClick={() => setYearly(true)}
+            aria-pressed={yearly}
             className={`px-3 py-1.5 rounded-full ${yearly ? "bg-ink text-paper" : "shadow-[0_0_0_1px_var(--input)] text-sage"}`}
           >
             {t.price.yearly}
@@ -271,9 +273,16 @@ export function DemoInbox() {
       </div>
       <div className="mt-3 pt-2 border-t flex items-center justify-between">
         <span className="text-[10px] font-mono text-sage">{t.demo.foot}</span>
-        <span className="text-[10px] font-mono text-ember">{t.demo.ai}</span>
+        <span className="flex items-center gap-1.5 text-[10px] font-mono text-ember">
+          <span className="size-1.5 rounded-full bg-ember animate-pulse" aria-hidden="true" />
+          {t.demo.ai}
+        </span>
       </div>
-      <button onClick={openDemoChat} className="mt-3 w-full btn-ink text-[12px] py-2">
+      <div className="mt-3 flex items-center gap-2 rounded-lg bg-muted px-3 py-2 text-[11px] text-sage">
+        <span className="flex-1 truncate">{t.demo.foot}</span>
+        <span className="font-mono text-ember" aria-hidden="true">↗</span>
+      </div>
+      <button onClick={openDemoChat} className="mt-2 w-full btn-ink text-[12px] py-2" aria-label={t.demo.live}>
         {t.demo.live}
       </button>
     </div>

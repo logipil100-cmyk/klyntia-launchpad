@@ -79,6 +79,27 @@ function Index() {
         </div>
       </section>
 
+      <section className="proof-strip border-y border-border/60" aria-label="Gnistrabot highlights">
+        <div className="max-w-6xl mx-auto px-4 py-5 md:py-6 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <div className="proof-item">
+            <span className="proof-value">24/7</span>
+            <span className="proof-label">{t.hero.stat1}</span>
+          </div>
+          <div className="proof-item">
+            <span className="proof-value">AI +</span>
+            <span className="proof-label">{t.hero.stat2}</span>
+          </div>
+          <div className="proof-item hidden md:flex">
+            <span className="proof-value">01</span>
+            <span className="proof-label">{t.integ.items[0][0]}</span>
+          </div>
+          <div className="proof-item hidden md:flex">
+            <span className="proof-value">∞</span>
+            <span className="proof-label">{t.integ.items[1][0]}</span>
+          </div>
+        </div>
+      </section>
+
       <section className="py-12 md:py-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="font-display font-bold text-[1.7rem] md:text-4xl leading-tight">
