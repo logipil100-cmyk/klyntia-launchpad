@@ -2,13 +2,16 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { useT } from "@/lib/i18n";
 
-const KEY = "klyntia-storage-notice";
+const KEY = "gnistrabot-storage-notice";
+const LEGACY_KEY = "klyntia-storage-notice";
 
 export function CookieBanner() {
   const { t } = useT();
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+    const legacy = localStorage.getItem(LEGACY_KEY);
+    if (legacy) { localStorage.setItem(KEY, legacy); localStorage.removeItem(LEGACY_KEY); }
     if (!localStorage.getItem(KEY)) setShow(true);
   }, []);
 

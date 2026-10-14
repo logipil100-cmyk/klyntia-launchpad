@@ -2,13 +2,18 @@ import { useEffect } from "react";
 import { trackAffiliateClick, claimReferral } from "@/lib/affiliate.functions";
 import { supabase } from "@/integrations/supabase/client";
 
-const REF_KEY = "klyntia-ref";
-const VISITOR_KEY = "klyntia-visitor";
+const REF_KEY = "gnistrabot-ref";
+const VISITOR_KEY = "gnistrabot-visitor";
+const LEGACY: [string, string][] = [["klyntia-ref", REF_KEY], ["klyntia-visitor", VISITOR_KEY]];
 const WINDOW_MS = 30 * 24 * 3600 * 1000;
 
 /** Captures ?ref=CODE, counts a unique click, and attributes the next sign-in once. */
 export function AffiliateTracker() {
   useEffect(() => {
+    for (const [old, cur] of LEGACY) {
+      const v = localStorage.getItem(old);
+      if (v !== null) { if (!localStorage.getItem(cur)) localStorage.setItem(cur, v); localStorage.removeItem(old); }
+    }
     const ref = new URLSearchParams(window.location.search).get("ref")?.toLowerCase();
     if (ref && /^[a-z0-9]{6,16}$/.test(ref)) {
       let visitor = localStorage.getItem(VISITOR_KEY);
