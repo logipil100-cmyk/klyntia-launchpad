@@ -49,11 +49,11 @@ const Ctx = createContext<{ lang: Lang; setLang: (l: Lang) => void; t: Dict }>({
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("pt");
   useEffect(() => {
-    const s = localStorage.getItem("klyntia-lang") ?? localStorage.getItem("cd-lang");
-    if (s === "en" || s === "pt") { localStorage.setItem("klyntia-lang", s); localStorage.removeItem("cd-lang"); document.documentElement.lang = s; }
+    const s = localStorage.getItem("gnistrabot-lang") ?? localStorage.getItem("klyntia-lang") ?? localStorage.getItem("cd-lang");
+    if (s === "en" || s === "pt") { localStorage.setItem("gnistrabot-lang", s); localStorage.removeItem("klyntia-lang"); localStorage.removeItem("cd-lang"); document.documentElement.lang = s; }
     if (s === "en" || s === "pt") setLangState(s);
   }, []);
-  const setLang = (l: Lang) => { setLangState(l); localStorage.setItem("klyntia-lang", l); document.documentElement.lang = l; };
+  const setLang = (l: Lang) => { setLangState(l); localStorage.setItem("gnistrabot-lang", l); document.documentElement.lang = l; };
   return <Ctx.Provider value={{ lang, setLang, t: dict[lang] as Dict }}>{children}</Ctx.Provider>;
 }
 export const useT = () => useContext(Ctx);

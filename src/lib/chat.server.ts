@@ -5,7 +5,7 @@ export type ChatTurn = { role: "user" | "assistant"; content: string };
 
 export async function generateDemoReply(input: { messages: ChatTurn[]; lang: "pt" | "en" }) {
   const model = getGeminiModel();
-  if (!model) throw new Error("AI not configured");
+  if (!model) throw new Error("AI not configured: set GEMINI_API_KEY or LOVABLE_API_KEY");
   const language = input.lang === "pt" ? "European Portuguese (pt-PT)" : "English";
   const result = streamText({
     model,

@@ -1,11 +1,14 @@
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 
-// Uses the user's own Google key when GEMINI_API_KEY is set (e.g. on Vercel);
-// otherwise routes the same Gemini model through the Lovable AI Gateway.
-export function getGeminiModel(model = "gemini-2.0-flash") {
+// Each route needs a different model name: Google direct vs the Lovable AI Gateway.
+export const GOOGLE_DIRECT_MODEL = "gemini-2.0-flash";
+export const GATEWAY_MODEL = "google/gemini-2.5-flash";
+
+/** GEMINI_API_KEY (e.g. on Vercel) → Google direct; else LOVABLE_API_KEY → gateway; else null. */
+export function getGeminiModel() {
   const gemini = process.env["GEMINI_API_KEY"];
-  if (gemini) return createGoogleGenerativeAI({ apiKey: gemini })(model);
+  if (gemini) return createGoogleGenerativeAI({ apiKey: gemini })(GOOGLE_DIRECT_MODEL);
   const lovable = process.env["LOVABLE_API_KEY"];
   if (!lovable) return null;
   const provider = createOpenAICompatible({
@@ -13,5 +16,5 @@ export function getGeminiModel(model = "gemini-2.0-flash") {
     baseURL: "https://ai.gateway.lovable.dev/v1",
     headers: { "Lovable-API-Key": lovable, "X-Lovable-AIG-SDK": "vercel-ai-sdk" },
   });
-  return provider(`google/${model}`);
+  return provider(GATEWAY_MODEL);
 }

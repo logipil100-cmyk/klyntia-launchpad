@@ -266,7 +266,7 @@ export function DemoInbox() {
         </div>
         <div className="bg-muted rounded-lg rounded-tl-sm px-3 py-2 max-w-[70%]">{t.demo.m3}</div>
         <div className="bg-accent rounded-lg rounded-tr-sm px-3 py-2 w-fit ml-auto flex items-center gap-1.5">
-          {t.demo.m4} <span className="klyntia-blink text-ember">▍</span>
+          {t.demo.m4} <span className="gnistrabot-blink text-ember">▍</span>
         </div>
       </div>
       <div className="mt-3 pt-2 border-t flex items-center justify-between">

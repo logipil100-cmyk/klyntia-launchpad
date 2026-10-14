@@ -7,7 +7,7 @@ export class PromoError extends Error {
 
 export async function generatePromo(input: { product: string; channel: string; tone: string; lang: "pt" | "en" }) {
   const model = getGeminiModel();
-  if (!model) throw new PromoError(500, "AI not configured");
+  if (!model) throw new PromoError(500, "AI not configured: set GEMINI_API_KEY or LOVABLE_API_KEY");
   const language = input.lang === "pt" ? "Portuguese" : "English";
   const result = streamText({
     model,

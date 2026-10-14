@@ -88,7 +88,7 @@ function AuthPage() {
 
   async function google() {
     setMsg(null);
-    if (affiliate) sessionStorage.setItem("klyntia-affiliate", "1");
+    if (affiliate) sessionStorage.setItem("gnistrabot-affiliate", "1");
     const r = await lovable.auth.signInWithOAuth("google", { redirect_uri: `${window.location.origin}/auth` });
     if (r.error) setMsg({ ok: false, text: pt ? "Não foi possível entrar com o Google." : "Google sign-in failed." });
   }
