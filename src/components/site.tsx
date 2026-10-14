@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Globe2, Instagram, Mail, MessageCircle } from "lucide-react";
+import { Facebook, Globe2, Instagram, Mail, MessageCircle, Phone, Youtube } from "lucide-react";
+import { loadPublishedSocialLinks, socialIconLabel, visibleSocialLinks, type SocialLink } from "@/lib/socials";
 import { useT } from "@/lib/i18n";
 import { supabase } from "@/integrations/supabase/client";
 import { useSessionUser } from "@/hooks/use-session";
@@ -164,6 +165,7 @@ export function SiteFooter() {
           <Link to="/privacy">{t.legal.privacy}</Link>
           <Link to="/terms">{t.legal.terms}</Link>
         </div>
+        <SocialLinksFooter />
         <PoweredByFooter />
         <p className="mt-6 text-[11px] font-mono text-sage">
           {lang === "pt"
@@ -175,6 +177,44 @@ export function SiteFooter() {
         </a>
       </div>
     </footer>
+  );
+}
+
+function SocialLinksFooter() {
+  const links = visibleSocialLinks(loadPublishedSocialLinks());
+  if (!links.length) return null;
+  const icons: Record<SocialLink["id"], typeof Facebook> = {
+    facebook: Facebook,
+    instagram: Instagram,
+    whatsapp: MessageCircle,
+    tiktok: MessageCircle,
+    youtube: Youtube,
+    phone: Phone,
+  };
+
+  return (
+    <div className="mt-7 border-t border-border/60 pt-5">
+      <p className="eyebrow mb-3">Redes e contacto</p>
+      <div className="flex flex-wrap gap-2.5" aria-label="Redes sociais e contacto">
+        {links.map((link) => {
+          const Icon = icons[link.id];
+          return (
+            <a
+              key={link.id}
+              href={link.href}
+              target={link.id === "phone" ? undefined : "_blank"}
+              rel={link.id === "phone" ? undefined : "noopener noreferrer"}
+              className="surface-lift inline-flex items-center gap-2 rounded-full border border-border/70 px-3 py-2 text-[12px] text-sage hover:text-ink hover:border-ember transition-colors"
+            >
+              <Icon aria-hidden="true" size={15} strokeWidth={1.8} />
+              <span>{link.label}</span>
+              {link.id === "tiktok" && <span className="font-mono text-[10px] text-ember">tk</span>}
+              {link.id === "phone" && <span className="font-mono text-[10px] text-ember">call</span>}
+            </a>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
