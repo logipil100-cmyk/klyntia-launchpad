@@ -152,7 +152,7 @@
   }
 }
 
-@keyframes klyntia-contact-motion {
+@keyframes gnistrabot-contact-motion {
   0%,
   100% {
     transform: scale(1.08) translate3d(-1.5%, 0, 0) rotate(-0.4deg);
@@ -168,12 +168,12 @@
   }
 }
 
-@utility klyntia-contact-motion {
-  animation: klyntia-contact-motion 8s ease-in-out infinite;
+@utility gnistrabot-contact-motion {
+  animation: gnistrabot-contact-motion 8s ease-in-out infinite;
   transform-origin: 52% 50%;
 }
 
-@keyframes klyntia-slide {
+@keyframes gnistrabot-slide {
   from {
     transform: translateX(-100%);
     opacity: 0;
@@ -193,9 +193,9 @@
     opacity: 0;
   }
 }
-@utility klyntia-slide {
+@utility gnistrabot-slide {
   display: inline-block;
-  animation: klyntia-slide 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: gnistrabot-slide 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 @utility klyntia-blink {
   animation: klyntia-blink 1.05s steps(1) infinite;
