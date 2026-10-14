@@ -1,5 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
+import { Facebook, Globe2, Instagram, Mail, MessageCircle, Phone, Youtube } from "lucide-react";
+import { loadPublishedSocialLinks, socialIconLabel, visibleSocialLinks, type SocialLink } from "@/lib/socials";
 import { useT } from "@/lib/i18n";
 import { supabase } from "@/integrations/supabase/client";
 import { useSessionUser } from "@/hooks/use-session";
@@ -163,6 +165,7 @@ export function SiteFooter() {
           <Link to="/privacy">{t.legal.privacy}</Link>
           <Link to="/terms">{t.legal.terms}</Link>
         </div>
+        <SocialLinksFooter />
         <PoweredByFooter />
         <p className="mt-6 text-[11px] font-mono text-sage">
           {lang === "pt"
@@ -174,6 +177,44 @@ export function SiteFooter() {
         </a>
       </div>
     </footer>
+  );
+}
+
+function SocialLinksFooter() {
+  const links = visibleSocialLinks(loadPublishedSocialLinks());
+  if (!links.length) return null;
+  const icons: Record<SocialLink["id"], typeof Facebook> = {
+    facebook: Facebook,
+    instagram: Instagram,
+    whatsapp: MessageCircle,
+    tiktok: MessageCircle,
+    youtube: Youtube,
+    phone: Phone,
+  };
+
+  return (
+    <div className="mt-7 border-t border-border/60 pt-5">
+      <p className="eyebrow mb-3">Redes e contacto</p>
+      <div className="flex flex-wrap gap-2.5" aria-label="Redes sociais e contacto">
+        {links.map((link) => {
+          const Icon = icons[link.id];
+          return (
+            <a
+              key={link.id}
+              href={link.href}
+              target={link.id === "phone" ? undefined : "_blank"}
+              rel={link.id === "phone" ? undefined : "noopener noreferrer"}
+              className="surface-lift inline-flex items-center gap-2 rounded-full border border-border/70 px-3 py-2 text-[12px] text-sage hover:text-ink hover:border-ember transition-colors"
+            >
+              <Icon aria-hidden="true" size={15} strokeWidth={1.8} />
+              <span>{link.label}</span>
+              {link.id === "tiktok" && <span className="font-mono text-[10px] text-ember">tk</span>}
+              {link.id === "phone" && <span className="font-mono text-[10px] text-ember">call</span>}
+            </a>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -190,12 +231,14 @@ export function Pricing() {
         <div className="mt-4 flex items-center gap-2 text-[11px] font-mono">
           <button
             onClick={() => setYearly(false)}
+            aria-pressed={!yearly}
             className={`px-3 py-1.5 rounded-full ${!yearly ? "bg-ink text-paper" : "shadow-[0_0_0_1px_var(--input)] text-sage"}`}
           >
             {t.price.monthly}
           </button>
           <button
             onClick={() => setYearly(true)}
+            aria-pressed={yearly}
             className={`px-3 py-1.5 rounded-full ${yearly ? "bg-ink text-paper" : "shadow-[0_0_0_1px_var(--input)] text-sage"}`}
           >
             {t.price.yearly}
@@ -271,9 +314,16 @@ export function DemoInbox() {
       </div>
       <div className="mt-3 pt-2 border-t flex items-center justify-between">
         <span className="text-[10px] font-mono text-sage">{t.demo.foot}</span>
-        <span className="text-[10px] font-mono text-ember">{t.demo.ai}</span>
+        <span className="flex items-center gap-1.5 text-[10px] font-mono text-ember">
+          <span className="size-1.5 rounded-full bg-ember animate-pulse" aria-hidden="true" />
+          {t.demo.ai}
+        </span>
       </div>
-      <button onClick={openDemoChat} className="mt-3 w-full btn-ink text-[12px] py-2">
+      <div className="mt-3 flex items-center gap-2 rounded-lg bg-muted px-3 py-2 text-[11px] text-sage">
+        <span className="flex-1 truncate">{t.demo.foot}</span>
+        <span className="font-mono text-ember" aria-hidden="true">↗</span>
+      </div>
+      <button onClick={openDemoChat} className="mt-2 w-full btn-ink text-[12px] py-2" aria-label={t.demo.live}>
         {t.demo.live}
       </button>
     </div>
@@ -282,20 +332,30 @@ export function DemoInbox() {
 
 export function Integrations() {
   const { t } = useT();
+  const icons = [MessageCircle, Instagram, Globe2, Mail];
+  const items = [...t.integ.items, ...t.integ.items];
   return (
-    <section className="bg-ink text-paper py-10 md:py-16">
+    <section className="bg-ink text-paper py-10 md:py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
         <p className="eyebrow mb-4">{t.integ.label}</p>
-        <div className="grid grid-cols-3 gap-2.5">
-          {t.integ.items.map(([h, p]) => (
-            <div
-              key={h}
-              className="bg-paper/5 shadow-[0_0_0_1px_oklch(1_0_0/10%)] rounded-[12px] p-3 md:p-6 text-center"
-            >
-              <p className="font-semibold text-xs md:text-base">{h}</p>
-              <p className="text-[10px] md:text-xs text-sage mt-1">{p}</p>
-            </div>
-          ))}
+        <div className="integration-marquee" aria-label={t.integ.label}>
+          <div className="integration-track">
+            {items.map(([h, p], i) => {
+              const Icon = icons[i % icons.length];
+              return (
+                <div
+                  key={`${h}-${i}`}
+                  className="integration-card bg-paper/5 shadow-[0_0_0_1px_oklch(1_0_0/10%)] rounded-[12px] p-4 md:p-5"
+                >
+                  <Icon aria-hidden="true" className="text-ember" size={22} strokeWidth={1.7} />
+                  <div>
+                    <p className="font-semibold text-xs md:text-base">{h}</p>
+                    <p className="text-[10px] md:text-xs text-sage mt-1">{p}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
