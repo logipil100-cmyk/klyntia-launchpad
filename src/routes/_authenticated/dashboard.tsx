@@ -46,10 +46,10 @@ function Dashboard() {
         setName(data.display_name ?? ""); setCompany(data.company ?? ""); setAffiliate(data.is_affiliate);
       } else {
         const meta = user.user_metadata ?? {};
-        const isAff = meta["affiliate"] === true || (sessionStorage.getItem("klyntia-affiliate") ?? sessionStorage.getItem("cd_affiliate")) === "1";
+        const isAff = meta["affiliate"] === true || (sessionStorage.getItem("gnistrabot-affiliate") ?? sessionStorage.getItem("klyntia-affiliate") ?? sessionStorage.getItem("cd_affiliate")) === "1";
         const display = (meta["full_name"] || meta["name"] || (user.email ?? "").split("@")[0]) as string;
         await supabase.from("profiles").insert({ id: user.id, display_name: display, is_affiliate: isAff });
-        sessionStorage.removeItem("klyntia-affiliate");
+        sessionStorage.removeItem("gnistrabot-affiliate"); sessionStorage.removeItem("klyntia-affiliate");
         sessionStorage.removeItem("cd_affiliate");
         setName(display); setAffiliate(isAff);
       }

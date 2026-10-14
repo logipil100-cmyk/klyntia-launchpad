@@ -6,7 +6,7 @@ import { sendDemoMessage, DEMO_MAX_USER_TURNS } from "@/lib/chat.functions";
 
 type Turn = { role: "user" | "assistant"; content: string };
 
-export const OPEN_CHAT_EVENT = "klyntia:open-chat";
+export const OPEN_CHAT_EVENT = "gnistrabot:open-chat";
 export const openDemoChat = () => window.dispatchEvent(new Event(OPEN_CHAT_EVENT));
 
 export function ChatWidget() {
@@ -103,7 +103,7 @@ export function ChatWidget() {
             ))}
             {pending && (
               <p className="bg-muted rounded-lg rounded-tl-sm px-3 py-2 w-fit flex items-center gap-1" aria-label="...">
-                <span className="klyntia-blink text-ember">{"▍"}</span>
+                <span className="gnistrabot-blink text-ember">{"▍"}</span>
               </p>
             )}
             {notice === "error" && <p className="text-[12px] text-destructive">{t.chat.error}</p>}
@@ -116,9 +116,9 @@ export function ChatWidget() {
           </div>
 
           <form onSubmit={submit} className="border-t p-3 flex items-end gap-2">
-            <label htmlFor="klyntia-chat-input" className="sr-only">{t.chat.placeholder}</label>
+            <label htmlFor="gnistrabot-chat-input" className="sr-only">{t.chat.placeholder}</label>
             <textarea
-              id="klyntia-chat-input"
+              id="gnistrabot-chat-input"
               ref={inputRef}
               rows={1}
               value={input}

@@ -58,7 +58,7 @@ export function PromoGenerator() {
           <p className="font-semibold text-[14px]">{pt ? "Textos gerados" : "Generated texts"}</p>
           {out && <button onClick={() => { navigator.clipboard.writeText(out); setCopied(true); }} className="btn-line text-[11px]">{copied ? (pt ? "Copiado" : "Copied") : (pt ? "Copiar" : "Copy")}</button>}
         </div>
-        {busy && <p className="mt-4 text-[12px] font-mono text-sage klyntia-blink">{pt ? "A escrever…" : "Writing…"}</p>}
+        {busy && <p className="mt-4 text-[12px] font-mono text-sage gnistrabot-blink">{pt ? "A escrever…" : "Writing…"}</p>}
         {!busy && !out && <p className="mt-4 text-[12px] text-sage">{pt ? "Descreva o produto e o canal para receber 3 textos prontos a publicar." : "Describe the product and channel to get 3 ready-to-post texts."}</p>}
         {out && <p className="mt-4 text-[13px] whitespace-pre-wrap leading-relaxed">{out}</p>}
       </div>

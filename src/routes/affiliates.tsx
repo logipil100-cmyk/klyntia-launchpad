@@ -55,7 +55,7 @@ function AffiliatesPage() {
   }
 
   async function google() {
-    sessionStorage.setItem("klyntia-affiliate", "1");
+    sessionStorage.setItem("gnistrabot-affiliate", "1");
     const res = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin + "/auth" });
     if (res.error) setErr(res.error.message);
   }
