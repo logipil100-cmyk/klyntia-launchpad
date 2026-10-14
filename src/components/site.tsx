@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
+import { Globe2, Instagram, Mail, MessageCircle } from "lucide-react";
 import { useT } from "@/lib/i18n";
 import { supabase } from "@/integrations/supabase/client";
 import { useSessionUser } from "@/hooks/use-session";
@@ -291,20 +292,30 @@ export function DemoInbox() {
 
 export function Integrations() {
   const { t } = useT();
+  const icons = [MessageCircle, Instagram, Globe2, Mail];
+  const items = [...t.integ.items, ...t.integ.items];
   return (
-    <section className="bg-ink text-paper py-10 md:py-16">
+    <section className="bg-ink text-paper py-10 md:py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
         <p className="eyebrow mb-4">{t.integ.label}</p>
-        <div className="grid grid-cols-3 gap-2.5">
-          {t.integ.items.map(([h, p]) => (
-            <div
-              key={h}
-              className="bg-paper/5 shadow-[0_0_0_1px_oklch(1_0_0/10%)] rounded-[12px] p-3 md:p-6 text-center"
-            >
-              <p className="font-semibold text-xs md:text-base">{h}</p>
-              <p className="text-[10px] md:text-xs text-sage mt-1">{p}</p>
-            </div>
-          ))}
+        <div className="integration-marquee" aria-label={t.integ.label}>
+          <div className="integration-track">
+            {items.map(([h, p], i) => {
+              const Icon = icons[i % icons.length];
+              return (
+                <div
+                  key={`${h}-${i}`}
+                  className="integration-card bg-paper/5 shadow-[0_0_0_1px_oklch(1_0_0/10%)] rounded-[12px] p-4 md:p-5"
+                >
+                  <Icon aria-hidden="true" className="text-ember" size={22} strokeWidth={1.7} />
+                  <div>
+                    <p className="font-semibold text-xs md:text-base">{h}</p>
+                    <p className="text-[10px] md:text-xs text-sage mt-1">{p}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

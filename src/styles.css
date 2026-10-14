@@ -156,6 +156,34 @@
   }
 }
 
+.integration-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+.integration-track {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: integration-marquee 24s linear infinite;
+}
+.integration-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 9.5rem;
+}
+@keyframes integration-marquee {
+  to {
+    transform: translateX(calc(-50% - 0.375rem));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .integration-track {
+    animation: none;
+    transform: none;
+  }
+}
+
 .proof-strip {
   background: color-mix(in oklch, var(--paper) 92%, var(--ember));
 }
