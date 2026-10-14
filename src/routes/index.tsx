@@ -80,13 +80,6 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-ink text-paper py-12 md:hidden">
-        <div className="max-w-md mx-auto px-4">
-          <p className="eyebrow mb-4">{t.demo.label}</p>
-          <DemoInbox />
-        </div>
-      </section>
-
       <section className="py-12 md:py-20">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="font-display font-bold text-[1.7rem] md:text-4xl leading-tight">
