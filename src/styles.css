@@ -119,14 +119,18 @@
 }
 @utility surface-lift {
   transition:
-    transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1),
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    transform 0.16s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.16s ease,
+    border-color 0.16s ease;
+  will-change: transform;
   &:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     box-shadow:
-      0 14px 30px -22px var(--ink),
+      0 18px 34px -22px var(--ink),
       0 0 0 1px var(--ember);
+  }
+  &:active {
+    transform: translateY(-1px) scale(0.99);
   }
 }
 
@@ -157,20 +161,28 @@
   100% {
     transform: scale(1.08) translate3d(-1.5%, 0, 0) rotate(-0.4deg);
   }
-  20% {
-    transform: scale(1.12) translate3d(1.5%, -0.8%, 0) rotate(0.25deg);
+  18% {
+    transform: scale(1.13) translate3d(1.6%, -1%, 0) rotate(0.3deg);
   }
-  45% {
-    transform: scale(1.1) translate3d(0.5%, 1%, 0) rotate(-0.2deg);
+  38% {
+    transform: scale(1.1) translate3d(-0.4%, 1.2%, 0) rotate(-0.25deg);
   }
-  70% {
-    transform: scale(1.14) translate3d(-1%, 0.3%, 0) rotate(0.35deg);
+  58% {
+    transform: scale(1.15) translate3d(-1.5%, -0.2%, 0) rotate(0.4deg);
+  }
+  78% {
+    transform: scale(1.11) translate3d(0.8%, 0.7%, 0) rotate(-0.15deg);
   }
 }
 
 @utility gnistrabot-contact-motion {
-  animation: gnistrabot-contact-motion 8s ease-in-out infinite;
+  animation: gnistrabot-contact-motion 5.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   transform-origin: 52% 50%;
+  will-change: transform;
+}
+
+.gnistrabot-contact-motion:hover {
+  animation-duration: 3.6s;
 }
 
 @keyframes gnistrabot-slide {
@@ -221,8 +233,13 @@
   border-radius: 0.5rem;
   text-align: center;
   transition:
-    transform 0.15s,
-    filter 0.15s;
+    transform 0.16s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.16s ease,
+    box-shadow 0.16s ease;
+  will-change: transform;
+  &:focus-visible {
+    box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--ember);
+  }
   &:hover {
     filter: brightness(1.05);
     transform: translateY(-1px);
@@ -236,9 +253,13 @@
   padding: 0.7rem 1.25rem;
   border-radius: 0.5rem;
   text-align: center;
-  transition: transform 0.15s;
+  transition: transform 0.16s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.16s ease;
   &:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -18px var(--ink);
+  }
+  &:focus-visible {
+    box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--ember);
   }
 }
 @utility btn-line {
