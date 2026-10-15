@@ -238,6 +238,38 @@
   animation-duration: 3.6s;
 }
 
+.social-link__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 0.65rem;
+  color: white;
+  box-shadow: 0 5px 14px color-mix(in oklch, currentColor 20%, transparent);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.social-link:hover .social-link__icon,
+.social-link:focus-visible .social-link__icon {
+  transform: translateY(-2px) rotate(-4deg);
+  box-shadow: 0 8px 18px color-mix(in oklch, currentColor 28%, transparent);
+}
+.social-link__label {
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+.social-link--facebook { background: #1877f2; }
+.social-link--instagram { background: linear-gradient(135deg, #f58529, #dd2a7b 52%, #8134af); }
+.social-link--whatsapp { background: #25d366; }
+.social-link--tiktok { background: linear-gradient(135deg, #111 42%, #25f4ee 43%, #fe2c55 72%); }
+.social-link--youtube { background: #ff0033; }
+.social-link--phone { background: var(--ink); color: var(--paper); }
+
+@media (prefers-reduced-motion: reduce) {
+  .social-link__icon { transition: none; }
+}
+
+
 @keyframes gnistrabot-slide {
   from {
     transform: translateX(-100%);
