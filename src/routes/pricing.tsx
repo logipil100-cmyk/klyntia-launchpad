@@ -5,7 +5,7 @@ export const Route = createFileRoute("/pricing")({
   head: () => ({
     meta: [
       { title: "Preços — Gnistrabot" },
-      { name: "description", content: "Planos Starter, Pro e Scale. Teste grátis por 14 dias, sem cartão." },
+      { name: "description", content: "Planos Starter, Pro e Scale. Teste grátis por 5 dias, sem cartão. Reembolso disponível apenas nos primeiros 5 dias." },
       { property: "og:title", content: "Preços — Gnistrabot" },
       { property: "og:description", content: "Planos simples para atendimento e vendas com IA." },
       { property: "og:type", content: "website" },

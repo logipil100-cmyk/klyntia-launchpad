@@ -49,8 +49,8 @@ const Ctx = createContext<{ lang: Lang; setLang: (l: Lang) => void; t: Dict }>({
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("pt");
   useEffect(() => {
-    const s = localStorage.getItem("gnistrabot-lang") ?? localStorage.getItem("klyntia-lang") ?? localStorage.getItem("cd-lang");
-    if (s === "en" || s === "pt") { localStorage.setItem("gnistrabot-lang", s); localStorage.removeItem("klyntia-lang"); localStorage.removeItem("cd-lang"); document.documentElement.lang = s; }
+    const s = localStorage.getItem("gnistrabot-lang");
+    if (s === "en" || s === "pt") { document.documentElement.lang = s; }
     if (s === "en" || s === "pt") setLangState(s);
   }, []);
   const setLang = (l: Lang) => { setLangState(l); localStorage.setItem("gnistrabot-lang", l); document.documentElement.lang = l; };
