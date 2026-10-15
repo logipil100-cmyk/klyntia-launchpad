@@ -191,6 +191,15 @@ function SocialLinksFooter() {
     phone: Phone,
   };
 
+  const brandClasses: Record<SocialLink["id"], string> = {
+    facebook: "social-link--facebook",
+    instagram: "social-link--instagram",
+    whatsapp: "social-link--whatsapp",
+    tiktok: "social-link--tiktok",
+    youtube: "social-link--youtube",
+    phone: "social-link--phone",
+  };
+
   return (
     <div className="mt-7 border-t border-border/60 pt-5">
       <p className="eyebrow mb-3">Redes e contacto</p>
@@ -199,8 +208,10 @@ function SocialLinksFooter() {
           const Icon = icons[link.id];
           const content = (
             <>
-              <Icon aria-hidden="true" size={15} strokeWidth={1.8} />
-              <span>{link.label}</span>
+              <span className={`social-link__icon ${brandClasses[link.id]}`} aria-hidden="true">
+                <Icon size={15} strokeWidth={2} />
+              </span>
+              <span className="social-link__label">{link.label}</span>
             </>
           );
           return link.href.trim() ? (
@@ -209,7 +220,7 @@ function SocialLinksFooter() {
               href={link.href}
               target={link.id === "phone" ? undefined : "_blank"}
               rel={link.id === "phone" ? undefined : "noopener noreferrer"}
-              className="surface-lift inline-flex items-center gap-2 rounded-full border border-border/70 px-3 py-2 text-[12px] text-sage hover:text-ink hover:border-ember transition-colors"
+              className="social-link surface-lift inline-flex items-center gap-2 rounded-full border border-border/70 px-3 py-2 text-[12px] text-sage hover:text-ink hover:border-ember transition-colors"
             >
               {content}
             </a>
