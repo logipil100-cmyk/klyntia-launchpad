@@ -91,11 +91,11 @@ function Index() {
           </div>
           <div className="proof-item hidden md:flex">
             <span className="proof-value">01</span>
-            <span className="proof-label">{t.integ.items[0][0]}</span>
+            <span className="proof-label">{t.integ.items[0]?.[0]}</span>
           </div>
           <div className="proof-item hidden md:flex">
             <span className="proof-value">∞</span>
-            <span className="proof-label">{t.integ.items[1][0]}</span>
+            <span className="proof-label">{t.integ.items[1]?.[0]}</span>
           </div>
         </div>
       </section>
