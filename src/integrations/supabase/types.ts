@@ -121,6 +121,33 @@ export type Database = {
         }
         Relationships: []
       }
+      assistant_settings: {
+        Row: {
+          bot_name: string
+          business_hours: string
+          faq: string
+          tone: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          bot_name?: string
+          business_hours?: string
+          faq?: string
+          tone?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          bot_name?: string
+          business_hours?: string
+          faq?: string
+          tone?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       audit_log: {
         Row: {
           action: string
