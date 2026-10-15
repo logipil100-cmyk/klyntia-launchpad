@@ -358,7 +358,7 @@ export function Integrations() {
         <div className="integration-marquee" aria-label={t.integ.label}>
           <div className="integration-track">
             {items.map(([h, p], i) => {
-              const Icon = icons[i % icons.length];
+              const Icon = icons[i % icons.length]!;
               return (
                 <div
                   key={`${h}-${i}`}
