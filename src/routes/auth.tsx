@@ -48,6 +48,9 @@ function AuthPage() {
   const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
   const [sent, setSent] = useState(false);
 
+  // Google sign-in uses the Lovable hosting proxy (/~oauth); it 404s on other hosts like Vercel.
+  const [googleOk, setGoogleOk] = useState(true);
+  useEffect(() => { setGoogleOk(!window.location.hostname.endsWith("vercel.app")); }, []);
   useEffect(() => { setMode(search.mode ?? "in"); }, [search.mode]);
   useEffect(() => { if (user) navigate({ to: "/dashboard", replace: true }); }, [user, navigate]);
 
@@ -121,10 +124,14 @@ function AuthPage() {
           )
         ) : (
           <>
-            <button onClick={google} className="btn-line mt-6 w-full flex items-center justify-center gap-2">
-              <GoogleIcon /> {pt ? "Continuar com o Google" : "Continue with Google"}
-            </button>
-            <div className="my-5 flex items-center gap-3 text-[11px] font-mono text-sage"><span className="h-px flex-1 bg-border" />{pt ? "ou" : "or"}<span className="h-px flex-1 bg-border" /></div>
+            {googleOk ? (
+              <>
+                <button onClick={google} className="btn-line mt-6 w-full flex items-center justify-center gap-2">
+                  <GoogleIcon /> {pt ? "Continuar com o Google" : "Continue with Google"}
+                </button>
+                <div className="my-5 flex items-center gap-3 text-[11px] font-mono text-sage"><span className="h-px flex-1 bg-border" />{pt ? "ou" : "or"}<span className="h-px flex-1 bg-border" /></div>
+              </>
+            ) : <div className="mt-6" />}
             <form onSubmit={submit} className="space-y-3">
               <input type="email" autoComplete="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className={input} />
               <input type="password" autoComplete={mode === "in" ? "current-password" : "new-password"} placeholder={pt ? "Palavra-passe" : "Password"} value={password} onChange={(e) => setPassword(e.target.value)} className={input} />
