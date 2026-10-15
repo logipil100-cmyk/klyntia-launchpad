@@ -2,7 +2,7 @@ import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 
 // Each route needs a different model name: Google direct vs the Lovable AI Gateway.
-export const GOOGLE_DIRECT_MODEL = "gemini-2.0-flash";
+export const GOOGLE_DIRECT_MODEL = "gemini-2.5-flash";
 export const GATEWAY_MODEL = "google/gemini-2.5-flash";
 
 /** GEMINI_API_KEY (e.g. on Vercel) → Google direct; else LOVABLE_API_KEY → gateway; else null. */

@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { Facebook, Globe2, Instagram, Mail, MessageCircle, Phone, Youtube } from "lucide-react";
-import { loadPublishedSocialLinks, socialIconLabel, visibleSocialLinks, type SocialLink } from "@/lib/socials";
+import { loadPublishedSocialLinks, type SocialLink } from "@/lib/socials";
 import { useT } from "@/lib/i18n";
 import { supabase } from "@/integrations/supabase/client";
 import { useSessionUser } from "@/hooks/use-session";
@@ -181,8 +181,7 @@ export function SiteFooter() {
 }
 
 function SocialLinksFooter() {
-  const links = visibleSocialLinks(loadPublishedSocialLinks());
-  if (!links.length) return null;
+  const links = loadPublishedSocialLinks();
   const icons: Record<SocialLink["id"], typeof Facebook> = {
     facebook: Facebook,
     instagram: Instagram,
@@ -198,7 +197,13 @@ function SocialLinksFooter() {
       <div className="flex flex-wrap gap-2.5" aria-label="Redes sociais e contacto">
         {links.map((link) => {
           const Icon = icons[link.id];
-          return (
+          const content = (
+            <>
+              <Icon aria-hidden="true" size={15} strokeWidth={1.8} />
+              <span>{link.label}</span>
+            </>
+          );
+          return link.href.trim() ? (
             <a
               key={link.id}
               href={link.href}
@@ -206,11 +211,12 @@ function SocialLinksFooter() {
               rel={link.id === "phone" ? undefined : "noopener noreferrer"}
               className="surface-lift inline-flex items-center gap-2 rounded-full border border-border/70 px-3 py-2 text-[12px] text-sage hover:text-ink hover:border-ember transition-colors"
             >
-              <Icon aria-hidden="true" size={15} strokeWidth={1.8} />
-              <span>{link.label}</span>
-              {link.id === "tiktok" && <span className="font-mono text-[10px] text-ember">tk</span>}
-              {link.id === "phone" && <span className="font-mono text-[10px] text-ember">call</span>}
+              {content}
             </a>
+          ) : (
+            <span key={link.id} aria-label={`${link.label} — link ainda não configurado`} className="inline-flex items-center gap-2 rounded-full border border-border/50 px-3 py-2 text-[12px] text-sage/60">
+              {content}
+            </span>
           );
         })}
       </div>

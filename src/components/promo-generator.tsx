@@ -40,7 +40,7 @@ export function PromoGenerator() {
     <div className="mt-3 grid md:grid-cols-2 gap-3">
       <form onSubmit={submit} className="card-line rounded-[14px] p-5 space-y-3">
         <label className="block text-[12px] text-sage">{pt ? "Produto ou oferta" : "Product or offer"}
-          <textarea rows={4} maxLength={1500} value={product} onChange={(e) => setProduct(e.target.value)} placeholder={pt ? "Ex.: Gnistrabot Pro — atendimento automático no WhatsApp para lojas online, 14 dias grátis" : "E.g. Gnistrabot Pro — automated WhatsApp support for online stores, 14-day trial"} className={`${input} mt-1`} />
+          <textarea rows={4} maxLength={1500} value={product} onChange={(e) => setProduct(e.target.value)} placeholder={pt ? "Ex.: Gnistrabot Pro — atendimento automático no WhatsApp para lojas online, 5 dias grátis" : "E.g. Gnistrabot Pro — automated WhatsApp support for online stores, 5-day trial"} className={`${input} mt-1`} />
         </label>
         <label className="block text-[12px] text-sage">{pt ? "Canal de divulgação" : "Promotion channel"}
           <input maxLength={300} value={channel} onChange={(e) => setChannel(e.target.value)} placeholder={pt ? "Ex.: Instagram, email, grupo de WhatsApp" : "E.g. Instagram, email, WhatsApp group"} className={`${input} mt-1`} />
